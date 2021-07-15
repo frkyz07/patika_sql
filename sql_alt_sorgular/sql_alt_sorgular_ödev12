@@ -25,4 +25,5 @@
 
 	select first_name, last_name, amount from payment
 	left join customer on payment.customer_id = customer.customer_id
-	where amount = (select max(amount) from payment);
+	where amount = (select max(amount) from payment)
+	order by amount desc;
